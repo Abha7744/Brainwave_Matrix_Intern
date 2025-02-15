@@ -1,0 +1,194 @@
+*{margin :0;
+    padding:0;
+
+   
+      
+      
+      
+      
+        /* font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+       */
+      
+     
+      
+      
+        font-family: "Poppins", serif;
+        font-weight: 600;
+        font-style: normal;
+         
+};
+
+
+.image{
+    height:5px;
+   width :1px;}
+
+   .logo{
+    width: 10%;
+    height:auto;
+    object-fit:cover;
+   }
+
+
+.head{
+    background-color: rgb(5, 5, 5);
+}
+
+.size{
+    padding: 1%;
+    margin:0%;
+    font-weight:600;
+}
+.container{
+    display: flex;
+    justify-content:space-between;
+    
+    margin-right:50px;
+    color:rgb(229, 221, 237)
+
+    
+
+}
+.unordered{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.list{
+margin: 5px;
+padding:3px;
+}
+
+.main{
+    display: flex;
+    justify-content:space-between;
+    
+    
+}   
+
+
+.depression{
+    height:auto;
+    width: 100vh;
+    object-fit:cover;
+}
+
+.h1{
+    margin-top: 10%;
+    padding:5%;
+    padding-bottom: 0%;
+}
+.para{
+    padding-top: 1%;
+    padding-left:5%;
+    padding-right:10%;
+    color: rgba(0, 0, 0, 0.264);
+}
+
+.button{
+
+ border-radius:36px;
+ padding:1%;
+ margin:1%;
+ margin-left: 5%;
+ margin-top: 5%;
+
+ font-weight:bold;
+ font-style: normal;
+ background-color:rgb(80, 216, 80);
+ color:white;
+ white-space: nowrap;
+}
+
+
+ .size{ 
+    margin:15%;
+    padding:10%; 
+} 
+
+
+
+.heading{
+    color:green;
+    margin-top:5%;
+    margin-left:20%;
+    padding-bottom: 0%;
+    align-items: center;
+
+}
+
+.para2{
+padding:0%;
+margin-left:19%;
+    
+}
+
+.submit{
+    margin:10%;
+    padding:1%;
+    border-radius:36px;
+    background-color: rgb(80, 216, 80);
+    color:white;
+
+
+}
+
+.container3{
+    display:flex;
+
+    justify-content:space-between;
+    
+    
+
+}
+
+.offline{
+   background-color:pink;
+   border-radius: 2%;
+   margin:10%;
+   padding: 20px;
+   border-style: solid;
+   border-color: brown;
+   white-space: pre-wrap;
+   
+}
+
+.online{
+    background-color:pink;
+    border-style: solid;
+
+    border-radius: 2%;
+    margin:10%;
+    padding: 20px;
+    border-color: brown;
+    white-space: pre-wrap;
+    
+ }
+ .color{
+    color:blue;
+    text-decoration:solid;
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+   
+
+   
+
+
+
+
