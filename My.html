@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce Landing Page</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .cart-btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cart-btn:hover {
+            background-color: #ff6347;
+        }
+
+        /* Product Section */
+        .product-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #45a049;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .cart-modal-content h2 {
+            margin: 0 0 10px;
+        }
+
+        .cart-modal-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-modal-content ul li {
+            margin: 5px 0;
+        }
+
+        .cart-modal-content button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-modal-content button:hover {
+            background-color: #ff6347;
+        }
+
+        .close-btn {
+            background-color: #ccc;
+            color: black;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My E-Commerce Store</h1>
+        <button class="cart-btn" onclick="openCart()">Cart (0)</button>
+    </header>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="product-card" id="product1">
+            <img src="https://via.placeholder.com/200" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>$15.00</p>
+            <button onclick="addToCart('Product 1', 15)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" id="product2">
+            <img src="https://via.placeholder.com/200" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+        </div>
+
+        <div class="product-card" id="product3">
+            <img src="https://via.placeholder.com/200" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>$25.00</p>
+            <button onclick="addToCart('Product 3', 25)">Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <h2>Your Cart</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: $<span id="totalPrice">0</span></p>
+            <button onclick="checkout()">Checkout</button>
+            <button class="close-btn" onclick="closeCart()">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let cart = [];
+        let total = 0;
+
+        // Function to add products to the cart
+        function addToCart(productName, price) {
+            cart.push({ productName, price });
+            total += price;
+            updateCartUI();
+        }
+
+        // Update Cart Button and Modal UI
+        function updateCartUI() {
+            // Update Cart Button Text
+            document.querySelector('.cart-btn').textContent = `Cart (${cart.length})`;
+
+            // Update Cart Modal Items
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.productName} - $${item.price}`;
+                cartItemsContainer.appendChild(listItem);
+            });
+
+            // Update Total Price
+            document.getElementById('totalPrice').textContent = total;
+        }
+
+        // Open Cart Modal
+        function openCart() {
+            document.getElementById('cartModal').style.display = 'flex';
+        }
+
+        // Close Cart Modal
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        // Checkout Function (Just an Alert for Now)
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert(`Total: $${total}. Proceeding to checkout...`);
+                // In a real-world scenario, you would redirect to a checkout page or payment gateway here.
+            }
+        }
+    </script>
+</body>
+</html>
