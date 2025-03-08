@@ -3,149 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hear Me Out</title>
-    <link rel ="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="stylee.css" > 
+     <title>Happy birthday</title>
 
-</head>
+     </head>
 
-<body>
-<header class ="head">
-    <nav>
-        
-        <div class ="container"> 
-        
-        
-        <div class =image>
-        <img src ="/Mentalhealth_hearmeout.png" alt = "Logo of Hear Me Out" class ="logo">
-        </div>
-            
-
-<div>
-           
-                <ul class ="unordered">
-                <li class="list">Our Support</li>
-                <li class="list">Our Care</li>
-                <li class="list">Resources</li>
-                <li class="list">Community</li>
-                <li class="list">About us</li>
-                
-                <ul>
-                
-                
-            </div>
-
-    
-                
-
-                <div class="sign up">
-                <Button class="button size">sign up</Button> 
-            </div>  
+     <body>
        
+       
+        <div id="header">
+    <h1 style="font-size:100px">Today's is Swati's birthday &#127881; </h1>
+    <img id ="bff-img" src="images/swati.jpeg">
+    <h2 id ="bday-age">23 years old</h2>
+    <h4 id="bday-date">26.07.2024</h4>
+           </div>
 
-
-        
-    
-
-</div>
-</nav>
-</header>
-
-
-
- 
-    
-    
-<main>
-    <div class = "main">
-    <div class = "option">
-
-
-    <h1 class="h1"> Your Mental Health is Worth Taking Care of!</h1>
-    <p class="para">Our team provides mental health support through a community of people like you, along with mental health professionals and psychologists.
-         We are here to help you seek support and improve your life.</p>
-
-
-    <button class="button"> Book an Appointment</button>
-    <button class ="button">Subscribe Now</button>
-    </div>
-    <div class = "drawing">
-
-    <img src ="/girl.avif" alt="An image resembling the state of mind of a human being struggling from depression" class="depression">
-    </div>
-
-    </div>
-
-    
-
-    <h2 class="heading"> How are you feeling today?</h2>
-<p>
-    Accepting emotions is the first step toward personal growth and self-awareness. It allows us to understand ourselves better and respond to challenges with clarity.
-</p>
-    <p class="para2"><b>I'm feeling 
-        <label for = "emotions"></label>
-        <select id ="emotions"onchange="showSelectedValue()" name ="emotion">
-            <option value ="happy">&#128515 Happy</option>
-            <option value ="Confused">&#128533 Confused</option>
-            <option value ="Sad">&#128546 Sad</option>
-            <option value ="Angry">&#128544 Angry</option>
-            <option value ="Sleepy">&#128554 Sleepy</option>
-            <option value ="Tired">&#128515 Tired</option>
-            <option value ="Anxious">&#128560 Anxious</option>
-            <option value ="Depressed">&#128532 Depressed</option>
-            <option value ="Fearful">&#128552 Fearful</option>
-            <option value ="Neutral">&#128528 Neutral </option>
-        </select>
-
-        
-        <Button class ="submit" >Submit</Button>
-    </b></p>
-    
-
-
-<div class ="container3">
-
-    <div class ="offline">
-        <h3 class="color">Offline</h3>
-        Find best counsellors and therapist in your area.
-        <input type="text" placeholder ="Enter your location">
-        
-        <div><button  class="submit">search</button>
-    </div>
-
-    </div>
-
-    <div class ="online">
-   <h3 class="color">Online</h3>
-   What type of therapy are you looking for?
-   <input type="text" placeholder ="Enter the type of therapy you are looking for." class="searchbox">
-   <div>
-   <button  class="submit"> search</button>
-   </div>
 
    
+    <div class="gift-section">
+        <h2 class="gift-title">Here's how happy I am for you today 🥳</h2>
+        <h3 class="gift-hint">(Hover over the gift)</h3>
+        <div class ="gift-img" id="gift-img-happy"></div>
     </div>
-
-   </div>
-
-
-
-
-<script>
-    function showSelectedValue(){
-        let select= document.getElementbyId("options");
-        let output =document.getElementbyId("output");
-        output.textContent="You selected:"+ select.value;
-        
-
-    }
-</script>
-
-
-
-</main>
     
+    
+
+
+    
+    <div class="gift-section">
+        <h2 class="gift-title">How people react when you enter the room 😍</h2>
+        <div class="gift-img" id="gift-img-hot"></div>
+    </div>
+    
+    <div class="gift-section">
+        <h2 class="gift-title">If I had to describe you with ONE word 👇</h2>
+        <div class="gift-img" id="gift-img-beauty"></div>
+    </div>
+    
+   
+     <div class="gift-section">
+        <h2 class="gift-title">This one's for you, my friend 🥂</h2>
+        <div class="gift-img" id="gift-img-cheers"></div>
+    </div>
+    
+
+
+    
+
+    <P id="footer">If you want to build a bitrhday gift like this then follow 
+    <!-- <a class="tag" href="https://scrimba.com/links/htmlandcss" target="_blank"> -->
+        <!-- this course</a></P> -->
 </body>
 </html>
